@@ -34,15 +34,12 @@ public class Boletin18 {
         
         // Pregunto si quiere cargar los correos creados por defecto
         
-        String cargarCorreos;
+        String cargarCorreos = "No";
         
         try{
             
             cargarCorreos = JOptionPane.showInputDialog("Han llegado nuevos correos. ¿Deseas cargarlos? (Si | No)");
-        } finally {
-            
-            cargarCorreos = "No";
-        }
+        } finally {}
         
         switch(cargarCorreos){
             case "Si": buzon1.setCorreos(correos); break;
@@ -54,7 +51,7 @@ public class Boletin18 {
         
         do {
             
-            String opcion;
+            String opcion = "7";
             
             try{
                 opcion = JOptionPane.showInputDialog("Opciones:\n "
@@ -65,10 +62,7 @@ public class Boletin18 {
                     + "5) Mostrar un Correo\n"
                     + "6) Eliminar un Correo\n"
                     + "7) Salir");
-            } finally {
-            
-                opcion = "7";
-            }
+            } finally {}
             
         switch(opcion){
             case "1":
