@@ -39,7 +39,12 @@ public class Boletin18 {
         try{
             
             cargarCorreos = JOptionPane.showInputDialog("Han llegado nuevos correos. ¿Deseas cargarlos? (Si | No)");
-        } finally {}
+        }finally {
+            
+            if(cargarCorreos == null){
+                cargarCorreos ="No";
+            }
+        }
         
         switch(cargarCorreos){
             case "Si": buzon1.setCorreos(correos); break;
@@ -62,7 +67,12 @@ public class Boletin18 {
                     + "5) Mostrar un Correo\n"
                     + "6) Eliminar un Correo\n"
                     + "7) Salir");
-            } finally {}
+            }finally {
+                
+                if(opcion == null){
+                    opcion = "7";
+                }
+            }
             
         switch(opcion){
             case "1":
