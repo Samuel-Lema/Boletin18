@@ -34,7 +34,15 @@ public class Boletin18 {
         
         // Pregunto si quiere cargar los correos creados por defecto
         
-        String cargarCorreos = JOptionPane.showInputDialog("Han llegado nuevos correos. ¿Deseas cargarlos? (Si | No)");
+        String cargarCorreos;
+        
+        try{
+            
+            cargarCorreos = JOptionPane.showInputDialog("Han llegado nuevos correos. ¿Deseas cargarlos? (Si | No)");
+        } finally {
+            
+            cargarCorreos = "No";
+        }
         
         switch(cargarCorreos){
             case "Si": buzon1.setCorreos(correos); break;
@@ -45,19 +53,28 @@ public class Boletin18 {
         boolean exit = false;
         
         do {
-            String opcion = JOptionPane.showInputDialog("Opciones:\n "
-                + "1) Mostrar Nº de Correos\n "
-                + "2) Añadir un nuevo Correo\n"
-                + "3) Mostrar si hay mensajes sin leer\n"
-                + "4) Mostrar primer correo sin leer\n"
-                + "5) Mostrar un Correo\n"
-                + "6) Eliminar un Correo\n"
-                + "7) Salir");
+            
+            String opcion;
+            
+            try{
+                opcion = JOptionPane.showInputDialog("Opciones:\n "
+                    + "1) Mostrar Nº de Correos\n "
+                    + "2) Añadir un nuevo Correo\n"
+                    + "3) Mostrar si hay mensajes sin leer\n"
+                    + "4) Mostrar primer correo sin leer\n"
+                    + "5) Mostrar un Correo\n"
+                    + "6) Eliminar un Correo\n"
+                    + "7) Salir");
+            } finally {
+            
+                opcion = "7";
+            }
+            
         switch(opcion){
             case "1":
                 // Muestro el número de correos en el buzon
         
-                System.out.format("Hay %d correos en el buzon\n", correos.size()); break;
+                System.out.format("Hay %d correos en el buzon\n", buzon1.getCorreos().size()); break;
             case "2":
                 // Añade un correo nuevo al Buzon
         
